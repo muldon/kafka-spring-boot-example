@@ -1,3 +1,4 @@
+# Tutorial: https://thepracticaldeveloper.com/spring-boot-kafka-config/
 spring:
   kafka:
     consumer:
@@ -9,4 +10,4 @@ spring:
 
 tpd:
   topic-name: advice-topic
-  messages-per-request: 10
+  messages-per-request: 15

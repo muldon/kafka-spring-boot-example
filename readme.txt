@@ -1,0 +1,1 @@
+Tutorial: https://thepracticaldeveloper.com/spring-boot-kafka-config/
