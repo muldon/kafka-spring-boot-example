@@ -14,6 +14,7 @@ import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
+import org.springframework.kafka.config.TopicBuilder;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
@@ -57,7 +58,12 @@ public class KafkaConfig {
 
 	@Bean
 	public NewTopic adviceTopic() {
-		return new NewTopic(topicName, 3, (short) 1);
+		//return new NewTopic(topicName, 3, (short) 1);
+		return TopicBuilder
+				.name(topicName)
+				.partitions(3)
+				.replicas(1)
+				.build();
 	}
 
 	// Consumer configuration
